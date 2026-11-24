@@ -72,7 +72,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #e0507f;outline-offset:3p
 </div>
 <div class="stage"><div class="glass" id="card"></div></div>
 <footer><a href="https://t.me/mus1rmonov" target="_blank" rel="noopener">@mus1rmonov</a></footer>
-<audio id="aud" src="assets/music.mp3" preload="auto" loop></audio>
+<audio id="aud" src="music.mp3" preload="auto" loop></audio>
 
 <script>
 const START=62;
@@ -101,7 +101,7 @@ function render(back){
  if(d.e)h+=`<span class="emoji">${d.e}</span>`;
  h+= d.s?`<h1>${d.h}</h1>`:`<h2>${d.h}</h2>`;
  h+=`<p>${d.t}</p>`;
- if(d.photos)h+=`<div class="photos"><figure><img src="assets/p1.jpg" alt="Elnura"></figure><figure><img src="assets/p2.jpg" alt="Elnura"></figure><figure><img src="assets/p3.jpg" alt="Elnura"></figure></div>`;
+ if(d.photos)h+=`<div class="photos"><figure><img src="p1.jpg" alt="Elnura"></figure><figure><img src="p2.jpg" alt="Elnura"></figure><figure><img src="p3.jpg" alt="Elnura"></figure></div>`;
  if(d.from)h+=`<p class="from">Shohruh nomidan 💌</p>`;
  else if(cur===N-2||cur===0)h+='';
  h+=`<div class="nav">`;
