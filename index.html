@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elnura, tug'ilgan kuning muborak! 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#f7b6c8;--rose:#e98aa8;--olive:#8a9a5b;--olive-d:#5f6b3a;--cream:#fff4f1;--ink:#4a3341}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fbd3df,#e3e8bf 55%,#f4b9cb);background-size:200% 200%;animation:bg 18s ease-in-out infinite}
+@keyframes bg{50%{background-position:100% 100%}}
+.blob{position:fixed;border-radius:50%;filter:blur(40px);opacity:.75;z-index:0;animation:float 14s ease-in-out infinite}
+.b1{width:46vmax;height:46vmax;background:var(--pink);top:-12vmax;left:-12vmax}
+.b2{width:42vmax;height:42vmax;background:var(--olive);bottom:-14vmax;right:-10vmax;animation-delay:-5s;opacity:.55}
+.b3{width:30vmax;height:30vmax;background:#f08fae;top:35%;left:55%;animation-delay:-9s;opacity:.5}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(6vmax,4vmax) scale(1.12)}66%{transform:translate(-4vmax,7vmax) scale(.92)}}
+#petals{position:fixed;inset:0;z-index:1;pointer-events:none}
+.stage{position:fixed;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:16px 16px 64px}
+.glass{position:relative;width:min(560px,100%);max-height:100%;overflow:auto;padding:34px 28px 26px;text-align:center;border-radius:34px;
+background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,.18));
+backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);
+border:1.5px solid rgba(255,255,255,.75);
+box-shadow:0 20px 60px rgba(120,70,90,.25),inset 0 2px 0 rgba(255,255,255,.9),inset 0 -12px 30px rgba(255,255,255,.2)}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 48%,transparent 66%);background-size:250% 100%;animation:sheen 6s ease-in-out infinite}
+@keyframes sheen{0%{background-position:160% 0}60%,100%{background-position:-60% 0}}
+.page{animation:in .8s cubic-bezier(.2,.9,.3,1.2) both}
+.page.back{animation-name:inb}
+@keyframes in{from{opacity:0;transform:translateY(30px) scale(.94);filter:blur(10px)}}
+@keyframes inb{from{opacity:0;transform:translateY(-30px) scale(.94);filter:blur(10px)}}
+.emoji{font-size:54px;display:block;margin-bottom:10px;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(6deg)}}
+h1,h2{font-family:'Playfair Display',serif;font-weight:600;line-height:1.15;color:#a23a63}
+h1{font-size:clamp(34px,9vw,52px)}
+h2{font-size:clamp(26px,7vw,36px);margin-bottom:14px}
+h1 em,h2 em{font-style:italic;color:var(--olive-d)}
+p{font-size:clamp(16px,4.2vw,19px);line-height:1.65;margin-top:10px}
+.from{margin-top:18px;font-weight:700;color:var(--olive-d)}
+.photos{display:flex;gap:10px;margin-top:14px}
+.photos figure{flex:1;border-radius:20px;overflow:hidden;border:2px solid rgba(255,255,255,.85);box-shadow:0 8px 22px rgba(120,70,90,.25);aspect-ratio:3/4;animation:in .9s both}
+.photos figure:nth-child(2){animation-delay:.15s}.photos figure:nth-child(3){animation-delay:.3s}
+.photos img{width:100%;height:100%;object-fit:cover;display:block}
+.nav{display:flex;gap:12px;justify-content:center;align-items:center;margin-top:24px}
+.btn{font:700 17px 'Nunito',sans-serif;color:#fff;border:1.5px solid rgba(255,255,255,.8);cursor:pointer;padding:14px 30px;border-radius:999px;
+background:linear-gradient(135deg,rgba(233,138,168,.9),rgba(138,154,91,.9));box-shadow:0 8px 22px rgba(160,60,100,.35),inset 0 1px 0 rgba(255,255,255,.7);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px) scale(1.04)}.btn:active{transform:scale(.95)}
+.btn.next{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 8px 22px rgba(160,60,100,.35),0 0 0 0 rgba(233,138,168,.6)}70%,100%{box-shadow:0 8px 22px rgba(160,60,100,.35),0 0 0 16px rgba(233,138,168,0)}}
+.btn.ghost{background:rgba(255,255,255,.4);color:var(--ink);padding:14px 20px}
+.dots{display:flex;gap:5px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(95,107,58,.3);transition:.4s}
+.dots i.on{background:#e0507f;width:22px;border-radius:6px}
+.count{font-size:13px;opacity:.7;margin-top:8px}
+footer{position:fixed;left:0;right:0;bottom:0;z-index:5;text-align:center;padding:12px 10px calc(12px + env(safe-area-inset-bottom));font-weight:700;font-size:15px}
+footer a{color:var(--ink);text-decoration:none;padding:8px 20px;border-radius:999px;background:rgba(255,255,255,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.8)}
+#music{position:fixed;top:calc(14px + env(safe-area-inset-top));right:14px;z-index:6;display:flex;gap:8px}
+#music button{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.85);cursor:pointer;font-size:19px;background:rgba(255,255,255,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 18px rgba(120,70,90,.25)}
+#music button:active{transform:scale(.9)}
+button:focus-visible,a:focus-visible{outline:3px solid #e0507f;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<canvas id="petals"></canvas>
+<div id="music">
+  <button id="pp" aria-label="Pauza / davom ettirish">⏸</button>
+  <button id="mu" aria-label="Ovozni o'chirish">🔊</button>
+</div>
+<div class="stage"><div class="glass" id="card"></div></div>
+<footer><a href="https://t.me/mus1rmonov" target="_blank" rel="noopener">@mus1rmonov</a></footer>
+<audio id="aud" src="assets/music.mp3" preload="auto" loop></audio>
+
+<script>
+const START=62;
+const P=[
+ {e:'🎂',h:"Tug'ilgan kuning muborak, <em>Elnura!</em>",t:"Bugun sening kuning. Bu sahifalar faqat sen uchun tayyorlandi. Keyingisini bosib ko'r 💗",s:1},
+ {e:'🌸',h:"Eng yaxshi sinfdosh",t:"Sinfimizda sen borligingdan hammamiz xursandmiz. Sening mehribon tabassuming kayfiyatimizni ko'taradi."},
+ {e:'✨',h:"Yangi yosh – yangi imkoniyatlar",t:"Yangi yoshingda hayot senga faqat yaxshi kunlar, yangi g'oyalar va katta imkoniyatlar olib kelsin."},
+ {e:'💖',h:"Sog'lik va baxt",t:"Eng avvalo sog'-salomat bo'l. Yuzingdan kulgi, yuragingdan quvonch aslo ketmasin."},
+ {e:'📚',h:"Orzularing ushalsin",t:"Qo'ying-chi, nimani istasang, hammasiga erishasan. Maqsadlaring sari ishonch bilan qadam tashla."},
+ {e:'🌷',h:"Seni nimasi bilan sevamiz?",t:"Samimiyliging, ochiq yuzing, yaxshi so'zlaring va doimo yordamga tayyorliging uchun. Sen juda qadrlisan."},
+ {e:'🦋',h:"Hayot go'zal",t:"Har kuning kapalakdek yengil, gullardek xushbo'y va quyoshdek yorug' o'tsin."},
+ {e:'🍀',h:"Omad doim yoningda bo'lsin",t:"Imtihonlarda a'lo baholar, hayotda esa buyuk muvaffaqiyatlar tilayman."},
+ {e:'🤍',h:"Qalbing doim toza bo'lsin",t:"Atrofingda faqat samimiy, mehribon va ishonchli insonlar bo'lsin. Sen shunga loyiqsan."},
+ {e:'🌿',h:"Tinchlik va farovonlik",t:"Oilangda tinchlik, uyingda baraka, dasturxoningda to'kinlik bo'lsin."},
+ {e:'💫',h:"Sen o'zgacha yulduzsan",t:"O'zingga ishon. Sen o'ylagandan ham kuchli, aqlli va chiroylisan."},
+ {e:'🎁',h:"Kichik sovg'a – katta tilak",t:"Bu sayt mening sovg'am. Uni sevib tayyorladim, shunchaki seni xursand qilish uchun."},
+ {photos:1,h:"Mana, bugungi qahramon!",t:"Eng chiroyli lahzalaring esda qolsin 📸"},
+ {e:'🥂',h:"Yana bir bor tabriklayman!",t:"Tug'ilgan kun – yangi sahifaning boshlanishi. Uni eng chiroyli yoz, Elnura!"},
+ {e:'🌹',h:"Tug'ilgan kuning bilan, <em>Elnura!</em>",t:"Baxtli bo'l, kulib yasha va doim shunday porla. Sevgi va hurmat bilan 💗",from:1,last:1}
+];
+const N=P.length, card=document.getElementById('card'), aud=document.getElementById('aud');
+let cur=0,started=false;
+function render(back){
+ const d=P[cur];
+ let h=`<div class="page${back?' back':''}">`;
+ if(d.e)h+=`<span class="emoji">${d.e}</span>`;
+ h+= d.s?`<h1>${d.h}</h1>`:`<h2>${d.h}</h2>`;
+ h+=`<p>${d.t}</p>`;
+ if(d.photos)h+=`<div class="photos"><figure><img src="assets/p1.jpg" alt="Elnura"></figure><figure><img src="assets/p2.jpg" alt="Elnura"></figure><figure><img src="assets/p3.jpg" alt="Elnura"></figure></div>`;
+ if(d.from)h+=`<p class="from">Shohruh nomidan 💌</p>`;
+ else if(cur===N-2||cur===0)h+='';
+ h+=`<div class="nav">`;
+ if(cur>0)h+=`<button class="btn ghost" id="prev" aria-label="Orqaga">←</button>`;
+ h+= d.last?`<button class="btn next" id="nxt">Boshidan ko'rish ↺</button>`:`<button class="btn next" id="nxt">${cur===0?'Boshlash':'Keyingisi'} →</button>`;
+ h+=`</div><div class="dots">${P.map((_,i)=>`<i class="${i===cur?'on':''}"></i>`).join('')}</div><div class="count">${cur+1} / ${N}</div></div>`;
+ card.innerHTML=h; card.scrollTop=0;
+ document.getElementById('nxt').onclick=()=>{startMusic();go(d.last?0:cur+1)};
+ const pv=document.getElementById('prev'); if(pv)pv.onclick=()=>go(cur-1,true);
+ location.hash=cur+1;
+}
+function go(i,back){cur=i;render(back)}
+
+/* Music: starts at 1:02 */
+function seek(){try{if(aud.duration&&aud.currentTime<START-1)aud.currentTime=START}catch(e){}}
+aud.addEventListener('loadedmetadata',()=>{aud.currentTime=START});
+aud.addEventListener('ended',()=>{aud.currentTime=START;aud.play()});
+function startMusic(){
+ if(started&&!aud.paused)return;
+ seek();
+ const pr=aud.play(); if(pr)pr.then(()=>{started=true;ui()}).catch(()=>{});
+}
+const pp=document.getElementById('pp'),mu=document.getElementById('mu');
+function ui(){pp.textContent=aud.paused?'▶':'⏸';mu.textContent=aud.muted?'🔇':'🔊'}
+pp.onclick=()=>{aud.paused?(seek(),aud.play()):aud.pause();ui()};
+mu.onclick=()=>{aud.muted=!aud.muted;ui()};
+aud.addEventListener('play',ui);aud.addEventListener('pause',ui);
+// try autoplay right away; if browser blocks it, first touch anywhere starts it
+startMusic();
+['pointerdown','keydown','touchstart'].forEach(ev=>addEventListener(ev,function f(){
+ if(!started){startMusic()} else removeEventListener(ev,f);
+},{passive:true}));
+
+/* Falling petals */
+const cv=document.getElementById('petals'),cx=cv.getContext('2d');let W,H,ps=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<26;i++)ps.push({x:Math.random()*W,y:Math.random()*H,r:5+Math.random()*8,v:.4+Math.random()*.9,s:Math.random()*6,c:Math.random()>.35?'rgba(244,143,177,.7)':'rgba(138,154,91,.6)'});
+(function loop(){cx.clearRect(0,0,W,H);ps.forEach(p=>{p.y+=p.v;p.s+=.02;p.x+=Math.sin(p.s)*.8;if(p.y>H+20){p.y=-20;p.x=Math.random()*W}
+ cx.save();cx.translate(p.x,p.y);cx.rotate(p.s);cx.fillStyle=p.c;cx.beginPath();cx.ellipse(0,0,p.r,p.r/1.8,0,0,7);cx.fill();cx.restore()});requestAnimationFrame(loop)})();
+
+const h=parseInt(location.hash.slice(1));if(h>=1&&h<=N)cur=h-1;
+render();
+</script>
+</body>
+</html>
